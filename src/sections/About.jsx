@@ -1,4 +1,4 @@
-export const Contact = () => {
+export const About = () => {
     return (
         <section></section>
     )
