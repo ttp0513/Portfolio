@@ -84,12 +84,13 @@ export const Hero = () => {
                         <span className="text-sm text-muted-foreground">Follow me: </span>
                             {[
                                { icon: Github, href:"https://github.com/ttp0513"},
-                               { icon: Linkedin, href:"https://www.linkedin.com/in/trongthephan/"},
-                               { icon: Instagram, href: "#"}
+                               { icon: Linkedin, href:"https://www.linkedin.com/in/trongthephan/"}
                             ].map((social, index) => (
                                 <a 
                                     key={index} 
                                     href={social.href} 
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
                                     className="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all duration-300"
                                 >
                                 {<social.icon />}
@@ -99,17 +100,33 @@ export const Hero = () => {
                     </div>
                 </div>
 
-                {/* Right Column - Profile Image */ }
-                <div className="relative animate-fade-in animate-delay-1000">
-                    <div className="relative max-w-md mx-auto">
-                        <div className="relative glass rounded-3xl p-2 glow-border">
-                            <img 
-                                src="/public/TTP_self.JPG"
-                                alt="Trong Phan"
-                                className="w-full aspect-[4/5] object-cover rounded-2xl"/>
+                {/* Right Column */ }
+                    <div className="relative animate-fade-in animate-delay-1000">
+                        <div className="relative max-w-md mx-auto">
+                            <div className="absolute inset-0
+                            rounded-3xl bg-gradient-to-br from-primary/60 
+                            to-primary/10 blur-2xl animate-pulse">
+                            </div>
+
+                            {/* Profile Image */ }
+                            <div className="relative glass rounded-3xl p-2 glow-border">
+                                <img 
+                                    src="/TTP_self.JPG"
+                                    alt="Trong Phan"
+                                    className="w-full aspect-[4/5] object-cover rounded-2xl"/>
+                            </div>
+
+                            {/* Employment Badge */ }
+                            <div className="absolute -bottom-6 -right-10 glass rounded-xl px-4 py-3 hover:bg-primary animate-float">
+                                <div className="flex items-center gap-3">
+                                    <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
+                                    <span className="text-sm font-medium">Available to work</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
+
+
             </div>
         </div> 
 

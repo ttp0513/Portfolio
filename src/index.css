@@ -48,10 +48,10 @@
   }
 
   .glass-strong {
-    background-color: color-mix(in srgb, var(--color-surface) 60%, transparent);
+    background-color: color-mix(in srgb, var(--color-surface) 80%, transparent);
     -webkit-backdrop-filter: blur(16px);
     backdrop-filter: blur(16px);
-    border: 1px solid color-mix(in srgb, var(--color-border) 60%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-border) 80%, transparent);
   }
 
   .glow-text {
@@ -60,7 +60,7 @@
   }
 
   .glow-border{
-    text-shadow: 0 0 20px
+    text-shadow: 0 0 50px
       color-mix(in srgb, var(--color-primary) 20%, transparent),
       inset 0 0 20px color-mix(in srgb, var(--color-primary) 5%, transparent)
   }
@@ -124,6 +124,10 @@
       color-mix(in srgb, var(--color-primary) 50%, transparent);
   }
 
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
   @keyframes star-fall {
     0% {
       transform: translate(0, 0) rotate(45deg);
@@ -135,6 +139,18 @@
     100% {
       transform: translate(200px, 600px) rotate(45deg);
       opacity: 0;
+    }
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-20px);
+
     }
   }
 }
