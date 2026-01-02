@@ -1,5 +1,6 @@
 import {Button} from "@/components/Button";
 import {ArrowRight, Download} from "lucide-react";
+import { Github, Linkedin, Instagram } from "lucide-react"
 
 export const Hero = () => {
     return (
@@ -8,7 +9,7 @@ export const Hero = () => {
         {/* Background Elements */ }
         <div className = "absolute inset-0">
             <img src="/hero-background.jpg" alt="Hero background" className="w-full h-full object-cover opacity-40" />
-            <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/80 to-background">
+            <div className="absolute inset-0 bg-gradient-to-b from-background/10 via-background/80 to-background">
             </div>
         </div>
 
@@ -32,10 +33,11 @@ export const Hero = () => {
 
 
         {/* Content */ }   
-        <div className="container mx-auto px-6 pt-32 pb-20 relative z-10">
+        <div className="container mx-auto px-6 pt-32 pb-30 relative z-10">
             <div className = "grid lg:grid-cols-2 gap-12 items-center">
+
                 {/* Left Column - Text Content */ }
-                <div className = "space-y-8">
+                <div className="space-y-4">
                     <div className="animate-fade-in">
                         <span 
                         className = "inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-l text-white">
@@ -44,35 +46,70 @@ export const Hero = () => {
                         <span className="w-2 h-2 bg-primary rounded-full animate-pulse"/> Web Developer
                         </span>                         
                     </div>
+                
+
+                    {/* Headline */}
+                    <div className="space-y-8">
+                        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in animate-delay-200"> 
+                            Crafting end‑to‑end <span class="text-primary glow-text">data & web solutions </span>
+                            where <span class="font-serif italic font-normal text-primary glow-text">analytics</span> leads
+                            and <span class="font-serif italic font-normal text-primary glow-text">engineering</span> scales.
+                        </h1>
+
+                        <p className = "text-lg text-muted-foreground max-w-xl animate-fade-in animate-delay-400">
+                            Hi, I'm Trong, a data analyst specializing in structured, scalable solutions, from data pipelines
+                            to interactive dashboards. I bring clear logic and purposeful storytelling to every project I build.
+                        </p>
+                    </div>
+
+                    {/* CTAs */}
+                    <div className="mt-8 mx-auto">
+                        <div className="flex flex-wrap gap-4 animate-fade-in animate-delay-600">
+
+                            {/* Contact */}
+                        <Button >
+                            Contact Me <ArrowRight className="w-5 h-5"/>
+                        </Button>
+
+                            {/* Download CV */}
+                        <button className = "wrap-text-bottom wrap-text-bottom:hover relative z-10 rounded-full flex items-center justify-center gap-2 cursor-pointer">
+                            <Download className="w-5 h-5"/>
+                                <a className= "px-2" href="/public/TTP_cv.pdf" download>Download CV</a>
+                        </button>
+                        </div>
+                    </div>
+
+                    {/* Social Links */}
+                    <div className="flex items-center mt-4 gap-4 animate-fade-in animate-delay-800">
+                        <span className="text-sm text-muted-foreground">Follow me: </span>
+                            {[
+                               { icon: Github, href:"https://github.com/ttp0513"},
+                               { icon: Linkedin, href:"https://www.linkedin.com/in/trongthephan/"},
+                               { icon: Instagram, href: "#"}
+                            ].map((social, index) => (
+                                <a 
+                                    key={index} 
+                                    href={social.href} 
+                                    className="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all duration-300"
+                                >
+                                {<social.icon />}
+                                </a>
+                            )
+                            )}
+                    </div>
                 </div>
 
-                {/* Headline */}
-                <div className="space-y-4">
-                    <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in animate-delay-200"> 
-                        Crafting end‑to‑end <span class="text-primary glow-text">data & web solutions </span>
-                        where <span class="font-serif italic font-normal text-primary glow-text">analytics</span> leads
-                        and <span class="font-serif italic font-normal text-primary glow-text">engineering</span> scales.
-                    </h1>
-                    <p className = "text-lg text-muted-foreground max-w-lg animate-fade-in animate-delay-400">
-                        Hi, I'm Trong, a data analyst specializing in structured, scalable solutions, from data pipelines
-                        to interactive dashboards. I bring clear logic and purposeful storytelling to every project I build.
-                    </p>
+                {/* Right Column - Profile Image */ }
+                <div className="relative animate-fade-in animate-delay-1000">
+                    <div className="relative max-w-md mx-auto">
+                        <div className="relative glass rounded-3xl p-2 glow-border">
+                            <img 
+                                src="/public/TTP_self.JPG"
+                                alt="Trong Phan"
+                                className="w-full aspect-[4/5] object-cover rounded-2xl"/>
+                        </div>
+                    </div>
                 </div>
-
-                {/* CTAs */}
-                <div>
-                <Button size="lg" >
-                    Contact Me <ArrowRight className="w-5 h-5"/>
-                </Button>
-                <button className = "wrap-text-bottom wrap-text-bottom:hover inline-flex px-8 py-4 text-lg rounded-full cursor-pointer">
-                    <Download className="w-5 h-5"/>
-                    <span className="px-2">
-                        Download CV
-                    </span>
-                </button>
-                </div>
-
-
             </div>
         </div> 
 

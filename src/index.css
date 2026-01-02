@@ -20,7 +20,7 @@
   --radius: 0.75rem;
 
   --color-highlight: #f5a623;
-  --color-surface: #1a2329;
+  --color-surface: #0a1d2e;
 }
 
 @layer base {
@@ -48,7 +48,7 @@
   }
 
   .glass-strong {
-    background-color: color-mix(in srgb, var(--color-surface) 80%, transparent);
+    background-color: color-mix(in srgb, var(--color-surface) 60%, transparent);
     -webkit-backdrop-filter: blur(16px);
     backdrop-filter: blur(16px);
     border: 1px solid color-mix(in srgb, var(--color-border) 60%, transparent);
@@ -57,6 +57,12 @@
   .glow-text {
     text-shadow: 0 0 30px
       color-mix(in srgb, var(--color-primary) 50%, transparent);
+  }
+
+  .glow-border{
+    text-shadow: 0 0 20px
+      color-mix(in srgb, var(--color-primary) 20%, transparent),
+      inset 0 0 20px color-mix(in srgb, var(--color-primary) 5%, transparent)
   }
 
   .wrap-text-bottom {
@@ -104,6 +110,10 @@
 
   .animate-delay-800 {
     animation-delay: 800ms;
+  }
+
+  .animate-delay-1000 {
+    animation-delay: 1000ms;
   }
 
   .animated-border:hover {
