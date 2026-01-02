@@ -7,8 +7,8 @@ export const Hero = () => {
         
         {/* Background Elements */ }
         <div className = "absolute inset-0">
-            <img src="/hero-image.png" alt="Hero background" className="w-full h-full object-cover opacity-40" />
-            <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/80 to-background">
+            <img src="/hero-background.jpg" alt="Hero background" className="w-full h-full object-cover opacity-40" />
+            <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/80 to-background">
             </div>
         </div>
 
@@ -33,7 +33,7 @@ export const Hero = () => {
 
         {/* Content */ }   
         <div className="container mx-auto px-6 pt-32 pb-20 relative z-10">
-            <div className = "grid lg:grid-cols-1 gap-12 items-center">
+            <div className = "grid lg:grid-cols-2 gap-12 items-center">
                 {/* Left Column - Text Content */ }
                 <div className = "space-y-8">
                     <div className="animate-fade-in">
@@ -49,24 +49,22 @@ export const Hero = () => {
                 {/* Headline */}
                 <div className="space-y-4">
                     <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in animate-delay-200"> 
-                        Building end‑to‑end <span class="text-primary glow-text"> data & web solutions </span> 
-                        that merge <span class="font-serif italic font-normal text-primary ">analytics</span> with
-                        <br/> 
-                        <span class="font-serif italic font-normal text-primary"> engineering. 
-                        </span> 
+                        Crafting end‑to‑end <span class="text-primary glow-text">data & web solutions </span>
+                        where <span class="font-serif italic font-normal text-primary glow-text">analytics</span> leads
+                        and <span class="font-serif italic font-normal text-primary glow-text">engineering</span> scales.
                     </h1>
                     <p className = "text-lg text-muted-foreground max-w-lg animate-fade-in animate-delay-400">
-                        Hi, I'm Trong Phan - an aspiring web developer and an experienced data analyst specializing in business intelligence and data engineering. 
-                        I engineer insights and build the web around them.
+                        Hi, I'm Trong, a data analyst specializing in structured, scalable solutions, from data pipelines
+                        to interactive dashboards. I bring clear logic and purposeful storytelling to every project I build.
                     </p>
                 </div>
 
                 {/* CTAs */}
                 <div>
-                <Button size="lg">
+                <Button size="lg" >
                     Contact Me <ArrowRight className="w-5 h-5"/>
                 </Button>
-                <button className = "bg-sky-500/100 inline-flex px-8 py-4 text-lg bg-sky rounded-full animated-border:hover">
+                <button className = "wrap-text-bottom wrap-text-bottom:hover inline-flex px-8 py-4 text-lg rounded-full cursor-pointer">
                     <Download className="w-5 h-5"/>
                     <span className="px-2">
                         Download CV

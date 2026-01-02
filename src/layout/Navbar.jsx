@@ -7,6 +7,7 @@ const navLinks = [
     {href: "#projects", label: "Projects"},
     {href: "#contact", label: "Contact"},
     {href: "#experience", label: "Experience"}
+    
 ]
 
 export const Navbar = () => {
@@ -24,7 +25,7 @@ const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false) ;
                 <div className = "hidden md:flex items-center gap-2">
                     <div className = "glass rounded-full px-2 py-1 flex items-center gap-1">
                     {navLinks.map((link, index) => (
-                        <a key={index} href={link.href} className = "px-4 py-2 text-sm text-muted-foreground hover:text-foreground rounded-full hover:bg-surface">
+                        <a key={index} href={link.href} className = "px-4 py-2 text-sm text-muted-foreground hover:text-foreground rounded-full hover:bg-primary">
                             {link.label}
                         </a>
                    
@@ -50,7 +51,7 @@ const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false) ;
             {/* Mobile menu (hidden by default) */}
             {isMobileMenuOpen && (
             <div className ="md:hidden glass-strong animate-fade-in">
-                <div className = "container mx-auto px-6 py-6 flex flex-col gap-4">
+                <div className = "container mx-auto px-6 py-6 flex flex-col gap-4 text-center">
                     {navLinks.map((link, index) => (
                         <a key={index} 
                            href={link.href}
@@ -59,8 +60,10 @@ const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false) ;
                         </a>
                    
                     ))}
-                    <Button>Contact Me</Button>
+                    <Button className="mx-auto" >Contact Me</Button>
                 </div>
+            
             </div>)}
+            
         </header>
 };
