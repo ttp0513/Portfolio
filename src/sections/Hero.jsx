@@ -2,9 +2,21 @@ import {Button} from "@/components/Button";
 import {ArrowRight, Download} from "lucide-react";
 import { Github, Linkedin, Instagram } from "lucide-react"
 
+const skillsList = [
+    "React",
+    "Power BI",
+    "Excel",
+    "Vercel",
+    "Tailwind CSS",
+    "Javascript",
+    "Git",
+    "MySQL",
+    "Python"
+];
+
 export const Hero = () => {
     return (
-        <section className="relative min-h-screen flex items-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center overflow-hidden">
         
         {/* Background Elements */ }
         <div className = "absolute inset-0">
@@ -49,14 +61,14 @@ export const Hero = () => {
                 
 
                     {/* Headline */}
-                    <div className="space-y-8">
-                        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
-                            Turning <span class="text-primary glow-text">data</span> into decisions with 
-                            <span class="font-serif italic font-normal text-primary glow-text"> analytics</span> and 
-                            <span class="font-serif italic font-normal text-primary glow-text"> engineering</span>.
+                    <div className="space-y-4">
+                        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in animate-delay-200">
+                            Turning <span className="text-primary glow-text">data</span> into decisions with 
+                            <span className="font-serif italic font-normal text-primary glow-text"> analytics</span> and 
+                            <span className="font-serif italic font-normal text-primary glow-text"> engineering</span>.
                         </h1>
 
-                        <p className = "text-lg text-muted-foreground max-w-xl animate-fade-in animate-delay-400">
+                        <p className = "text-lg text-muted-foreground max-w-2xl animate-fade-in animate-delay-400">
                             Hi, I'm Trong, a data analyst specializing in structured, scalable solutions, from data pipelines
                             to interactive dashboards. I bring clear logic and purposeful storytelling to every project I build.
                         </p>
@@ -101,9 +113,9 @@ export const Hero = () => {
                 </div>
 
                 {/* Right Column */ }
-                    <div className="relative animate-fade-in animate-delay-1000">
+                    <div className="relative animate-fade-in animate-delay-600">
                         <div className="relative max-w-md mx-auto">
-                            <div className="absolute inset-0
+                            <div className="absolute inset-0 
                             rounded-3xl bg-gradient-to-br from-primary/60 
                             to-primary/10 blur-2xl animate-pulse">
                             </div>
@@ -111,7 +123,7 @@ export const Hero = () => {
                             {/* Profile Image */ }
                             <div className="relative glass rounded-3xl p-2 glow-border">
                                 <img 
-                                    src="/TTP_self.JPG"
+                                    src="/profile-test.jpg"
                                     alt="Trong Phan"
                                     className="w-full aspect-[4/5] object-cover rounded-2xl"/>
                             </div>
@@ -132,8 +144,25 @@ export const Hero = () => {
                         </div>
                     </div>
             </div>
-        </div> 
 
-        </section>
+                {/* Skills Demo */ }
+                <div className="mt-5 animate-fade-in animate-delay-800">
+                    <p className="text-md text-muted-foreground mb-6 text-center">Technologies I've workedq with</p>
+                        <div className="relative overflow-hidden">
+                            <div className="flex animate-marquee" >
+                            {[...skillsList,...skillsList].map((skill, index) => (
+                            <div key={index} 
+                                className="flex-shrink-0 px-8 py-4">
+                                <span className="text-xl font-semibold text-white/90 hover:text-muted-foreground transition-colors">{skill}</span>
+                            </div>
+                            )
+                            )}
+                            </div>
+                        </div>
+                </div>
+  
+        </div>
+            
+    </section>
     )
 };
