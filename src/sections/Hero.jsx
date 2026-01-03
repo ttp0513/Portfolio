@@ -2,6 +2,7 @@ import {Button} from "@/components/Button";
 import {ArrowRight, Download} from "lucide-react";
 import { Github, Linkedin, Instagram } from "lucide-react"
 
+
 const skillsList = [
     "React",
     "Power BI",
@@ -146,17 +147,19 @@ export const Hero = () => {
             </div>
 
                 {/* Skills Demo */ }
-                <div className="mt-5 animate-fade-in animate-delay-800">
-                    <p className="text-md text-muted-foreground mb-6 text-center">Technologies I've workedq with</p>
+                <div className="mt-10 animate-fade-in animate-delay-800">
+                    <p className="text-lg text-muted-foreground mb-5 text-center">My Tech Stack</p>
                         <div className="relative overflow-hidden">
                             <div className="flex animate-marquee" >
                             {[...skillsList,...skillsList].map((skill, index) => (
                             <div key={index} 
                                 className="flex-shrink-0 px-8 py-4">
-                                <span className="text-xl font-semibold text-white/90 hover:text-muted-foreground transition-colors">{skill}</span>
+                                <span 
+                                className="text-xl font-semibold text-white/90 hover:text-muted-foreground transition-colors">
+                                {skill}
+                                </span>
                             </div>
-                            )
-                            )}
+                            ))}
                             </div>
                         </div>
                 </div>
