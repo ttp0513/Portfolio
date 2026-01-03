@@ -50,10 +50,10 @@ export const Hero = () => {
 
                     {/* Headline */}
                     <div className="space-y-8">
-                        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in animate-delay-200"> 
-                            Crafting end‑to‑end <span class="text-primary glow-text">data & web solutions </span>
-                            where <span class="font-serif italic font-normal text-primary glow-text">analytics</span> leads
-                            and <span class="font-serif italic font-normal text-primary glow-text">engineering</span> scales.
+                        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
+                            Turning <span class="text-primary glow-text">data</span> into decisions with 
+                            <span class="font-serif italic font-normal text-primary glow-text"> analytics</span> and 
+                            <span class="font-serif italic font-normal text-primary glow-text"> engineering</span>.
                         </h1>
 
                         <p className = "text-lg text-muted-foreground max-w-xl animate-fade-in animate-delay-400">
@@ -131,8 +131,6 @@ export const Hero = () => {
                             </div>
                         </div>
                     </div>
-
-
             </div>
         </div> 
 
