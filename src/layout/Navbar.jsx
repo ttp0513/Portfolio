@@ -54,6 +54,7 @@ export const Navbar = () => {
             {/* Mobile menu button */}
             <button 
                 className ="md:hidden p-2 text-foreground cursor-pointer" 
+                // When the button is clicked, it toggles the mobile menu open/closed.
                 onClick = {() => setIsMobileMenuOpen((prev) => !prev)}>
                 {isMobileMenuOpen ? <X size  ={24} /> : <Menu size  ={24} />}
             </button>
@@ -66,12 +67,13 @@ export const Navbar = () => {
                     {navLinks.map((link, index) => (
                         <a key={index} 
                            href={link.href}
+                           onClick = {() => setIsMobileMenuOpen(false)}
                            className = "text-xl text-muted-foreground hover:text-foreground py-2">
                            {link.label}
                         </a>
                    
                     ))}
-                    <Button className="mx-auto" >Contact Me</Button>
+                    <Button onClick = {() => setIsMobileMenuOpen(false)} className="mx-auto" >Contact Me</Button>
                 </div>
             
             </div>)}

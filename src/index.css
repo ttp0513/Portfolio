@@ -2,25 +2,25 @@
 
 /* Define theme colors */
 @theme {
-  --color-background: #0f1418;
+  --color-background: #0f0700;
   --color-foreground: #f0f2f5;
   --color-card: #141a1f;
 
-  --color-primary: #20b2a6;
+  --color-primary: #D58936;
   --color-primary-foreground: #ffffff;
 
-  --color-secondary: #3b82f6;
-  --color-secondary-foreground: #ffffff;
+  --color-secondary: #e4c27b;
+  --color-secondary-foreground: #e36414;
 
   --color-muted: #252e37;
   --color-muted-foreground: #a1a1aa;
 
-  --color-border: #242b32;
+  --color-border: #14110f;
 
   --radius: 0.75rem;
 
-  --color-highlight: #f5a623;
-  --color-surface: #0a1d2e;
+  --color-highlight: #F2F3AE;
+  --color-surface:  #0d0600;
 }
 
 @layer base {
@@ -47,6 +47,12 @@
     border: 1px solid color-mix(in srgb, var(--color-border) 50%, transparent);
   }
 
+  .glass-light {
+    background-color: color-mix(in srgb, var(--color-primary) 50%, transparent);
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
+    border: 1px solid color-mix(in srgb, var(--color-primary) 50%, transparent);
+  }
   .glass-strong {
     background-color: color-mix(in srgb, var(--color-surface) 80%, transparent);
     -webkit-backdrop-filter: blur(16px);
@@ -130,6 +136,7 @@
 
   .animate-marquee {
     animation: marquee 30s linear infinite;
+    will-change: transform;
   }
   
 
@@ -165,7 +172,7 @@
     }
 
     100% {
-      transform: translateX(-50%);
+      transform: translateX(-50%); /* because content is duplicated */
     }
   }
 }

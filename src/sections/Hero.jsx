@@ -1,6 +1,7 @@
 import {Button} from "@/components/Button";
 import {ArrowRight, Download} from "lucide-react";
 import { Github, Linkedin, Instagram } from "lucide-react"
+import { SectionBackground } from "@/components/Section-Background";
 
 
 const skillsList = [
@@ -20,11 +21,7 @@ export const Hero = () => {
     <section className="relative min-h-screen flex items-center overflow-hidden">
         
         {/* Background Elements */ }
-        <div className = "absolute inset-0">
-            <img src="/hero-background.jpg" alt="Hero background" className="w-full h-full object-cover opacity-40" />
-            <div className="absolute inset-0 bg-gradient-to-b from-background/10 via-background/80 to-background">
-            </div>
-        </div>
+       <SectionBackground image="/hero-background.jpg" className="bg-gradient-to-l" />
 
         {/* Falling Stars */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -122,7 +119,7 @@ export const Hero = () => {
                             </div>
 
                             {/* Profile Image */ }
-                            <div className="relative glass rounded-3xl p-2 glow-border">
+                            <div className="relative glass-strong rounded-3xl p-2 glow-border">
                                 <img 
                                     src="/profile-test.jpg"
                                     alt="Trong Phan"
@@ -147,15 +144,15 @@ export const Hero = () => {
             </div>
 
                 {/* Skills Demo */ }
-                <div className="mt-10 animate-fade-in animate-delay-800">
-                    <p className="text-lg text-muted-foreground mb-5 text-center">My Tech Stack</p>
-                        <div className="relative overflow-hidden">
-                            <div className="flex animate-marquee" >
+                <div className=" mt-20 animate-fade-in animate-delay-800">
+                    <p className="text-lg text-muted-foreground mb-10 text-center">My Tech Stack</p>
+                        <div className="relative flex overflow-hidden">
+                            <div className="flex relative whitespace-nowrap animate-marquee" >
                             {[...skillsList,...skillsList].map((skill, index) => (
                             <div key={index} 
-                                className="flex-shrink-0 px-8 py-4">
+                                className="flex-shrink-0 px-8">
                                 <span 
-                                className="text-xl font-semibold text-white/90 hover:text-muted-foreground transition-colors">
+                                className="mx-2 text-2xl font-semibold text-muted-foreground hover:text-primary cursor-pointer transition-colors">
                                 {skill}
                                 </span>
                             </div>
