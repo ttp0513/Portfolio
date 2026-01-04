@@ -31,7 +31,7 @@ const highlights = [
 
 export const About = () => {
     return (
-        <section id="about" className="relative py-10 overflow-hidden">
+        <section id="about" className="relative overflow-hidden">
             <SectionBackground image="/about-background-3.jpg" className="bg-gradient-to-b" />
 
         
@@ -46,7 +46,7 @@ export const About = () => {
 
                     <h2 className="text-4xl md:text-5xl leading-tight font-bold animate-fade-in animate-delay-200 text-primary">
                         Clarity through analytics,
-                        <span className="font-serif italtic font-normal text-white"> built for what’s next </span>
+                        <span className="font-serif italic font-normal text-white"> built for what’s next </span>
                     </h2>
 
                     <div className="space-y-6 mb-8 text-muted-foreground animate-fade-in animate-delay-400">
@@ -69,7 +69,7 @@ export const About = () => {
                         </p>
                     </div>
 
-                    <div className="glass-light rounded-2xl p-5 glow-border animate-fade-in animate-delay-400">
+                    <div className="mb-10 glass-light rounded-2xl p-5 glow-border animate-fade-in animate-delay-400">
                         <p className="text-lg font-serif font-medium italic text-foreground">
                         "My mission is to bring clarity to complexity, to understand problems deeply, break them into what truly matters, and rebuild them into systems that help people move with confidence.  
                         Every project is a chance to make something clearer, stronger, and more useful than it was before."
@@ -77,14 +77,18 @@ export const About = () => {
                     </div>
                 </div>
 
+                <div className="font-medium font-serif italic text-2xl mb-4">Skills</div>
+
                 {/* Right Column */ } 
                 <div className="grid sm:grid-cols-2 gap-6">
                     {highlights.map((item, index) => (
-                        <div key={index} className="glass-strong p-6 rounded-2xl animate-fade-in animate-delay-400">
-                            <div>
-                                <item.icon/>
+                        <div key={index} 
+                        className="glass-strong p-6 rounded-2xl animate-fade-in cursor-pointer hover:bg-muted/20 transition duration-200"
+                        style={{animationDelay: `${(index+1) * 200}ms`}}>
+                            <div className="w-12 h-12 rounded-xl bg-surface flex items-center justify-center mb-4">
+                                <item.icon className="w-6 h-6 text-primary"/>
                             </div>
-                            <h3>{item.title}</h3>
+                            <h3 className="mb-2 text-lg font-semibold text-primary">{item.title}</h3>
                             <p>{item.description}</p>
                         </div>
                     ))}
