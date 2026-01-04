@@ -34,7 +34,7 @@ export const Navbar = () => {
             {/* Desktop menu */}
             <div>
                 <div className = "hidden md:flex items-center gap-2">
-                    <div className = "glass rounded-full px-2 py-1 flex items-center gap-1">
+                        <div className = {`rounded-full px-2 py-1 flex items-center gap-1 transition duration-300 ease-in-out ${isScrolled ? "glass-strong" : ""} `} >
                     {navLinks.map((link, index) => (
                         <a key={index} href={link.href} className = "px-4 py-2 text-sm text-muted-foreground hover:text-foreground rounded-full hover:bg-primary">
                             {link.label}

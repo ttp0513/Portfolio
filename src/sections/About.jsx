@@ -76,6 +76,19 @@ export const About = () => {
                         </p>
                     </div>
                 </div>
+
+                {/* Right Column */ } 
+                <div className="grid sm:grid-cols-2 gap-6">
+                    {highlights.map((item, index) => (
+                        <div key={index} className="glass-strong p-6 rounded-2xl animate-fade-in animate-delay-400">
+                            <div>
+                                <item.icon/>
+                            </div>
+                            <h3>{item.title}</h3>
+                            <p>{item.description}</p>
+                        </div>
+                    ))}
+                </div>
             </div>
         </section>
     )

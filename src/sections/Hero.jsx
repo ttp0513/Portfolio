@@ -119,7 +119,7 @@ export const Hero = () => {
                             </div>
 
                             {/* Profile Image */ }
-                            <div className="relative glass-strong rounded-3xl p-2 glow-border">
+                            <div className="relative bg-muted rounded-3xl p-2 glow-border">
                                 <img 
                                     src="/profile-test.jpg"
                                     alt="Trong Phan"
@@ -127,7 +127,7 @@ export const Hero = () => {
                             </div>
 
                             {/* Employment Badge */ }
-                            <div className="absolute -bottom-6 -right-10 glass rounded-xl px-4 py-3 hover:bg-primary animate-float">
+                            <div className="absolute -bottom-6 -right-10 glass rounded-xl px-4 py-3 animate-float">
                                 <div className="flex items-center gap-3">
                                     <div className="w-3 h-3 bg-primary rounded-full animate-pulse" />
                                     <span className="text-sm font-medium">Available to work</span>

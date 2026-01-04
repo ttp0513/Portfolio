@@ -12,7 +12,7 @@
   --color-secondary: #e4c27b;
   --color-secondary-foreground: #e36414;
 
-  --color-muted: #252e37;
+  --color-muted: #100700;
   --color-muted-foreground: #a1a1aa;
 
   --color-border: #14110f;
@@ -20,7 +20,7 @@
   --radius: 0.75rem;
 
   --color-highlight: #F2F3AE;
-  --color-surface:  #0d0600;
+  --color-surface:  #391a05;
 }
 
 @layer base {
@@ -41,23 +41,23 @@
 
 @layer components {
   .glass {
-    background-color: color-mix(in srgb, var(--color-surface) 50%, transparent);
+    background-color: color-mix(in srgb, var(--color-surface) 70%, transparent);
     -webkit-backdrop-filter: blur(16px);
     backdrop-filter: blur(16px);
-    border: 1px solid color-mix(in srgb, var(--color-border) 50%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-border) 70%, transparent);
   }
 
   .glass-light {
-    background-color: color-mix(in srgb, var(--color-primary) 50%, transparent);
+    background-color: color-mix(in srgb, var(--color-primary) 20%, transparent);
     -webkit-backdrop-filter: blur(16px);
     backdrop-filter: blur(16px);
     border: 1px solid color-mix(in srgb, var(--color-primary) 50%, transparent);
   }
   .glass-strong {
-    background-color: color-mix(in srgb, var(--color-surface) 80%, transparent);
+    background-color: color-mix(in srgb, var(--color-surface) 30%, transparent);
     -webkit-backdrop-filter: blur(16px);
     backdrop-filter: blur(16px);
-    border: 1px solid color-mix(in srgb, var(--color-border) 80%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-border) 30%, transparent);
   }
 
   .glow-text {
