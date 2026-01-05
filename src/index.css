@@ -10,7 +10,7 @@
   --color-primary-foreground: #ffffff;
 
   --color-secondary: #e4c27b;
-  --color-secondary-foreground: #e36414;
+  --color-secondary-foreground: #e46c25;
 
   --color-muted: #100700;
   --color-muted-foreground: #a1a1aa;
@@ -48,10 +48,10 @@
   }
 
   .glass-light {
-    background-color: color-mix(in srgb, var(--color-primary) 20%, transparent);
+    background-color: color-mix(in srgb, var(--color-secondary-foreground) 30%, transparent);
     -webkit-backdrop-filter: blur(16px);
     backdrop-filter: blur(16px);
-    border: 1px solid color-mix(in srgb, var(--color-primary) 50%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-border) 30%, transparent);
   }
   .glass-strong {
     background-color: color-mix(in srgb, var(--color-surface) 30%, transparent);
@@ -137,6 +137,11 @@
   .animate-marquee {
     animation: marquee 30s linear infinite;
     will-change: transform;
+  }
+
+  .timeline-glow {
+    box-shadow: 0 0 40px color-mix(in srgb, var(--color-primary), 35%, transparent),
+    0 0 80px color-mix(in srgb, var(--color-primary) 25%, transparent);
   }
   
 

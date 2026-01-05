@@ -32,10 +32,10 @@ const highlights = [
 export const About = () => {
     return (
         <section id="about" className="relative overflow-hidden">
-            <SectionBackground image="/about-background-3.jpg" className="bg-gradient-to-b" />
+            <SectionBackground image="/about-background.jpg" className="bg-gradient-to-r" />
 
         
-            <div className="container mx-auto px-6 relative z-10">
+            <div className="container mx-auto py-22 px-6 relative z-10">
 
                 {/* Left Column */ } 
                 <div className="space-y-6 animate-fade-in" >  
@@ -44,7 +44,7 @@ export const About = () => {
                     </div>
                     
 
-                    <h2 className="text-4xl md:text-5xl leading-tight font-bold animate-fade-in animate-delay-200 text-primary">
+                    <h2 className="text-4xl md:text-5xl leading-tight font-bold animate-fade-in animate-delay-200 text-secondary-foreground">
                         Clarity through analytics,
                         <span className="font-serif italic font-normal text-white"> built for what’s next </span>
                     </h2>
@@ -83,9 +83,9 @@ export const About = () => {
                 <div className="grid sm:grid-cols-2 gap-6">
                     {highlights.map((item, index) => (
                         <div key={index} 
-                        className="glass-strong p-6 rounded-2xl animate-fade-in cursor-pointer hover:bg-muted/20 transition duration-200"
+                        className="glass p-6 rounded-2xl animate-fade-in cursor-pointer hover:bg-secondary-foreground/20"
                         style={{animationDelay: `${(index+1) * 200}ms`}}>
-                            <div className="w-12 h-12 rounded-xl bg-surface flex items-center justify-center mb-4">
+                            <div className="w-12 h-12 rounded-xl bg-border/70 flex items-center justify-center mb-4">
                                 <item.icon className="w-6 h-6 text-primary"/>
                             </div>
                             <h3 className="mb-2 text-lg font-semibold text-primary">{item.title}</h3>
