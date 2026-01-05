@@ -41,10 +41,10 @@
 
 @layer components {
   .glass {
-    background-color: color-mix(in srgb, var(--color-surface) 70%, transparent);
+    background-color: color-mix(in srgb, var(--color-surface) 75%, transparent);
     -webkit-backdrop-filter: blur(16px);
     backdrop-filter: blur(16px);
-    border: 1px solid color-mix(in srgb, var(--color-border) 70%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-border) 75%, transparent);
   }
 
   .glass-light {
@@ -54,10 +54,10 @@
     border: 1px solid color-mix(in srgb, var(--color-border) 30%, transparent);
   }
   .glass-strong {
-    background-color: color-mix(in srgb, var(--color-surface) 30%, transparent);
+    background-color: color-mix(in srgb, var(--color-surface) 20%, transparent);
     -webkit-backdrop-filter: blur(16px);
     backdrop-filter: blur(16px);
-    border: 1px solid color-mix(in srgb, var(--color-border) 30%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-border) 20%, transparent);
   }
 
   .glow-text {
