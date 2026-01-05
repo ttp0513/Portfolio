@@ -59,7 +59,7 @@ export const Experience = () => {
             <div className="container mx-auto px-6 relative z-10">
                 {/* Header */}
                 <div className="max-w-3xl mb-16">
-                    <span className="text-secondary text-md font-medium tracking-wider uppercase">My Journey</span>
+                    <span className="text-secondary text-md font-medium tracking-wider uppercase animate-fade-in animate-delay-100">My Journey</span>
                     <h2
                     className="text-4xl md:text-5xl font-bold mt-4 mb-7 animate-fade-in
                     animate-delay-100 text-secondary-foreground">Experience that {""}

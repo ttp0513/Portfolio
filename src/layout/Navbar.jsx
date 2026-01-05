@@ -4,8 +4,8 @@ import { Menu, X } from "lucide-react";
 
 const navLinks = [
     {href: "#about", label: "About"},
-    {href: "#experience", label: "Experience"},
     {href: "#projects", label: "Projects"},
+    {href: "#experience", label: "Experience"},
     {href: "#contact", label: "Contact"}
 ]
 
@@ -73,7 +73,7 @@ export const Navbar = () => {
                         </a>
                    
                     ))}
-                    <Button onClick = {() => setIsMobileMenuOpen(false)} className="mx-auto" >Contact Me</Button>
+                    <Button onClick = {() => setIsMobileMenuOpen(false)} >Contact Me</Button>
                 </div>
             
             </div>)}
