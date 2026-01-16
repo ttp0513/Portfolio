@@ -10,19 +10,22 @@ const navLinks = [
 ]
 
 export const Navbar = () => {
+    // Controls whether the mobile dropdown menu is visible.
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false) ;
+
+    // Tracks whether the user has scrolled past 50px.
     const [isScrolled, setIsScrolled] = useState(false);
 
     useEffect(() => {
-
-        // when users scroll more than 50px, handleScroll functions returns true 
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 50);
         };
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
-        }, []);
-    
+        }, [])
+    //
+
+
     return (
         <header className= {`fixed top-0 left-0 right-0 transition-all duration-600 ${isScrolled ? "glass-strong py-4 border-none" : "bg-transparent py-6"}  z-50`}>
             <nav className = "container mx-auto px-6 flex items-center justify-between">

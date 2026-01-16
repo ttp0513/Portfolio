@@ -1,5 +1,6 @@
-import {Button} from "@/components/Button";
-import {ArrowRight, Download} from "lucide-react";
+/* eslint-disable react-hooks/purity */
+import { Button } from "@/components/Button";
+import { ArrowRight, Download } from "lucide-react";
 import { Github, Linkedin, Instagram } from "lucide-react"
 import { SectionBackground } from "@/components/Section-Background";
 
