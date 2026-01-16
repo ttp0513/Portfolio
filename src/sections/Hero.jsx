@@ -130,10 +130,12 @@ export const Hero = () => {
                             {/* Employment Badge */ }
                             <div className="absolute -bottom-6 -right-10 glass rounded-xl px-4 py-3 animate-float">
                                 <div className="flex items-center gap-3">
-                                    <div className="w-3 h-3 bg-primary rounded-full animate-pulse" />
+                                    <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse" />
                                     <span className="text-sm font-medium">Available to work</span>
                                 </div>
+                                
                             </div>
+
 
                              {/* Experience Badge */ }
                             <div className="absolute -top-4 -left-4 glass rounded-xl px-4 py-3 animate-float">

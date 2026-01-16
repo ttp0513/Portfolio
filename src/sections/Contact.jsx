@@ -1,4 +1,11 @@
-import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle } from "lucide-react";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Send,
+  CheckCircle,
+  AlertCircle,
+} from "lucide-react";
 import { Button } from "@/components/Button";
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
@@ -10,12 +17,7 @@ const contactInfo = [
     value: "johnphanthe@gmail.com",
     href: "mailto:johnphanthe@gmail.com",
   },
-  {
-    icon: Phone,
-    label: "Phone",
-    value: "+1 (651) 206-4261",
-    href: "#",
-  },
+
   {
     icon: MapPin,
     label: "Location",
@@ -108,9 +110,10 @@ export const Contact = () => {
           </p>
         </div>
 
-        {/* Contact Form */}
-        <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-22 max-w-5xl mx-auto">
+          {/* Contact Form */}
           <div className="bg-surface/30 p-8 rounded-3xl border border-border animate-fade-in animate-delay-400">
+            <h3 className="text-xl font-semibold mb-6">Contact Form</h3>
             <form className="space-y-6" onSubmit={handleSubmit}>
               <div>
                 <label
@@ -174,36 +177,81 @@ export const Contact = () => {
                                     focus:ring-1 focus:ring-primary outline-none transition-all resize-none "
                 />
               </div>
-              
+
               <Button className="w-full" type="submit" disable={isLoading}>
                 {isLoading ? (
                   <>Sending...</>
                 ) : (
                   <>
                     Send Message
-                    <Send className="w-5 h-5"
-                    />
+                    <Send className="w-5 h-5" />
                   </>
                 )}
               </Button>
 
               {submitStatus.type && (
                 <div
-                    className={`flex items-center gap-3 p-4 rounded-xl ${
-                        submitStatus.type === "success"
-                            ? "bg-green-500/10 border border-green-500/20 green-red-400"
-                            : "bg-red-500/10 border border-red-500/20 text-red-400"
-                    }`}
+                  className={`flex items-center gap-3 p-4 rounded-xl ${
+                    submitStatus.type === "success"
+                      ? "bg-green-500/10 border border-green-500/20 green-red-400"
+                      : "bg-red-500/10 border border-red-500/20 text-red-400"
+                  }`}
                 >
-                    {submitStatus.type === "success" ? (
-                        <CheckCircle className="w-5 h-5 flex-shrink-0" />                    
-                    ):(
-                        <AlertCircle className="w-5 h-5 flex-shrink-0" />)
-                    }
-                    <p className="text-sm">{submitStatus.message}</p>
+                  {submitStatus.type === "success" ? (
+                    <CheckCircle className="w-5 h-5 flex-shrink-0" />
+                  ) : (
+                    <AlertCircle className="w-5 h-5 flex-shrink-0" />
+                  )}
+                  <p className="text-sm">{submitStatus.message}</p>
                 </div>
               )}
             </form>
+          </div>
+
+          {/* Contact Info */}
+          <div className="space-y-6 animate-fade-in animateion-delay-400">
+            <div className="bg-surface/30 rounded-3xl p-8">
+              <h3 className="text-xl font-semibold mb-6">
+                Contact Information
+              </h3>
+              <div className="space-y-4">
+                {contactInfo.map((item, i) => (
+                  <a
+                    key={i}
+                    href={item.href}
+                    className="flex items-center gap-4 p-4 rounded-xl hover:bg-surface transition-colors"
+                  >
+                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                      <item.icon className="w-5 h-5 text-prumary" />
+                    </div>
+                    <div>
+                      <div className="text-sm text-muted-foreground">
+                        {item.label}
+                      </div>
+                      <div className="font-medium">{item.value}</div>
+                    </div>
+                  </a>
+                ))}
+              </div>
+
+              {/* Availability Card */}
+              <div className="bg-surface/30 rounded-3xl px-8 py-4 border border-primary/30 mt-4">
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
+                  <span className="font-medium">Currently Available</span>
+                </div>
+                <p className="text-muted-foreground text-sm">
+                  - I’m currently pursuing a full‑time master’s degree in Data
+                  Science and Analytics at Kennesaw State University. Even with
+                  a demanding course load, I’m actively open to internships,
+                  part‑time roles, and meaningful project collaborations.
+                  <p>
+                    - If you’re looking to connect or
+                    bring on an intern or freelancer, I’d love to talk.
+                  </p>
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
