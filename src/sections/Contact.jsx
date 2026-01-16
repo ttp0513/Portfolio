@@ -47,7 +47,7 @@ export const Contact = () => {
     try {
       const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
       const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_I;
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
       if (!serviceId || !templateId || !publicKey) {
         throw new Error(
@@ -174,6 +174,7 @@ export const Contact = () => {
                                     focus:ring-1 focus:ring-primary outline-none transition-all resize-none "
                 />
               </div>
+              
               <Button className="w-full" type="submit" disable={isLoading}>
                 {isLoading ? (
                   <>Sending...</>
