@@ -6,7 +6,7 @@ Analytics recruiters and hiring managers evaluating candidates for marketing mea
 
 ## Primary goal
 
-Demonstrate case studies and how I approach analytical problems.
+Help an analytics hiring manager understand my specialization within 30 seconds and open an evidence-backed case study demonstrating my responsibilities, methodology, validation, and decision-making.
 
 ## Primary action
 
