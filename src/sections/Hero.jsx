@@ -6,15 +6,15 @@ import { SectionBackground } from "@/components/Section-Background";
 
 
 const skillsList = [
-    "React",
-    "Power BI",
+    "Python",
+    "R",
+    "SAS",
     "Excel",
-    "Vercel",
-    "Tailwind CSS",
-    "Javascript",
-    "Git",
-    "MySQL",
-    "Python"
+    "Geo Experimentation",
+    "Causal Inference",
+    "Statistical Modeling",
+    "Applied AI Evaluation",
+    "Streamlit"
 ];
 
 export const Hero = () => {
@@ -52,9 +52,8 @@ export const Hero = () => {
                     <div className="animate-fade-in">
                         <span 
                         className = "inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-l text-white">
-                        <span className="w-2 h-2 bg-primary rounded-full animate-pulse"/> Data Analyst
-                        <span className="w-2 h-2 bg-primary rounded-full animate-pulse"/> BI Analyst
-                        <span className="w-2 h-2 bg-primary rounded-full animate-pulse"/> Web Developer
+                        <span className="w-2 h-2 bg-primary rounded-full animate-pulse"/>
+                        Experimentation Analytics &amp; Applied Data Science
                         </span>                         
                     </div>
                 
@@ -62,14 +61,14 @@ export const Hero = () => {
                     {/* Headline */}
                     <div className="space-y-4">
                         <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in animate-delay-200">
-                            Turning <span className="text-primary glow-text">data</span> into decisions with 
-                            <span className="font-serif italic font-normal text-primary glow-text"> analytics</span> and 
-                            <span className="font-serif italic font-normal text-primary glow-text"> engineering</span>.
+                            Turning <span className="text-primary glow-text">experiments</span> and data into
+                            <span className="font-serif italic font-normal text-primary glow-text"> decision-ready evidence</span>.
                         </h1>
 
                         <p className = "text-lg text-muted-foreground max-w-2xl animate-fade-in animate-delay-400">
-                            Hi, I'm Trong, a data analyst specializing in structured, scalable solutions, from data pipelines
-                            to interactive dashboards. I bring clear logic and purposeful storytelling to every project I build.
+                            I'm Trong Phan, an M.S. Data Science and Analytics candidate with professional experience supporting
+                            geo-lift measurement and causal-inference workflows. I use Python, R, statistical modeling, and applied
+                            AI to investigate business questions, validate results, and communicate what the evidence supports.
                         </p>
                     </div>
 
@@ -85,7 +84,7 @@ export const Hero = () => {
                             {/* Download CV */}
                         <button className = "wrap-text-bottom wrap-text-bottom:hover relative z-10 rounded-full flex items-center justify-center gap-2 cursor-pointer">
                             <Download className="w-5 h-5"/>
-                                <a className= "px-2" href="/public/TTP_cv.pdf" download>Download CV</a>
+                                <a className= "px-2" href="/Trong_Phan_Resume.pdf" download>Download Résumé</a>
                         </button>
                         </div>
                     </div>
@@ -131,7 +130,7 @@ export const Hero = () => {
                             <div className="absolute -bottom-6 -right-10 glass rounded-xl px-4 py-3 animate-float">
                                 <div className="flex items-center gap-3">
                                     <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse" />
-                                    <span className="text-sm font-medium">Available to work</span>
+                                    <span className="text-sm font-medium">Available Spring 2028</span>
                                 </div>
                                 
                             </div>
@@ -139,8 +138,8 @@ export const Hero = () => {
 
                              {/* Experience Badge */ }
                             <div className="absolute -top-4 -left-4 glass rounded-xl px-4 py-3 animate-float">
-                                <div className="text-2xl font-bold text-primary text-center">3+</div>
-                                <div className="text-sm font-medium">Years Exp</div>
+                                <div className="text-2xl font-bold text-primary text-center">7+</div>
+                                <div className="text-sm font-medium">Retail Accounts</div>
                             </div>
                         </div>
                     </div>

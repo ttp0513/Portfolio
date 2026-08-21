@@ -2,21 +2,30 @@ import {SectionBackground} from "@/components/Section-Background";
 
 const experience = [
 {
-    period: "2026 - Present",
-    role: "Master Student",
+    period: "Mar 2026 - Present",
+    role: "Student Researcher",
+    company: "Data Quality and Survey Methodology Lab",
+    description:
+        "Designing and evaluating a human-supervised workflow for classifying noisy, open-ended survey responses while preserving human labels, model outputs, and reproducible audit evidence.",
+    technologies: ["Python", "Streamlit", "Applied AI Evaluation", "Research Methods"],
+    current: true,
+},
+{
+    period: "Expected Dec 2027",
+    role: "M.S. Data Science and Analytics Candidate",
     company: "Kennesaw State University",
     description:
-        "Returning to graduate school to strengthen my foundation in data science, with the goal of building more rigorous, scalable, and business‑aligned analytics solutions.",
-    technologies: ["Excel", "Python", "R", "SAS", "MySQL", "Power BI", "Fabric"],
+        "Strengthening my foundations in statistical methods, programming, model evaluation, and responsible applied data science. Current GPA: 4.00.",
+    technologies: ["Python", "R", "SAS", "Statistical Modeling"],
     current: false,
 },
 {
-    period: "2022 - 2025",
+    period: "Jun 2022 - Feb 2025",
     role: "Advanced Analytics Analyst",
     company: "Ovative Group LLC",
-    description: `Led incrementality testing and performance analysis to measure media effectiveness and guide marketing investment decisions. 
-    Built frameworks and partnered cross‑functionally to turn insights into action.`,
-    technologies: ["Excel", "R", "Python", "ClickUp", "Confluence"],
+    description:
+        "Supported geo-experiment design and analysis across seven-plus retail client accounts and online and offline media channels. Configured an internal R-based geo-testing platform, evaluated iROAS point estimates and one-sided confidence bounds, and helped assess whether budget or duration changes were needed. Prepared and presented findings, uncertainty, and measurement implications to internal analytics teams.",
+    technologies: ["R", "Geo Experimentation", "Causal Inference", "Excel"],
     current: false,
 },
 {
@@ -33,7 +42,7 @@ const experience = [
     role: "Data Analyst Intern",
     company: "Y Venture Group",
     description:
-        "Built a U.S. book‑sales dashboard with a team of interns to forecast demand and improve inventory planning.",
+        "Built a U.S. book-sales dashboard with a team of interns to forecast demand and improve inventory planning.",
     technologies: ["Excel", "Python"],
     current: false,
 },
@@ -42,7 +51,7 @@ const experience = [
     role: "Undergraduate Student",
     company: "University of Minnesota",
     description:
-        "Completed a bachelor’s degree in MIS and Supply Chain Operations, with a minor in Business Analytics.",
+        "Completed a bachelor's degree in Management Information Systems and Supply Chain Operations, with a minor in Business Analytics.",
     technologies: ["Excel", "Python"],
     current: false,
 }
@@ -62,13 +71,13 @@ export const Experience = () => {
                     <span className="text-secondary text-md font-medium tracking-wider uppercase animate-fade-in animate-delay-100">My Journey</span>
                     <h2
                     className="text-4xl md:text-5xl font-bold mt-4 mb-7 animate-fade-in
-                    animate-delay-100 text-secondary-foreground">Experience that {""}
-                    <span className="font-serif italic font-normal text-white"> speaks volume.</span>
+                    animate-delay-100 text-secondary-foreground">Experience in
+                    <span className="font-serif italic font-normal text-white"> experimentation and applied analytics.</span>
                     </h2>
 
                     <p className="text-muted-foreground animate-fade-in animate-delay-200">
-                        A timeline of my academic and professional growth, from curiosity and experimentation
-                        to a mission‑driven career built on clarity, structure, and meaningful impact.
+                        Professional and academic work spanning geo-experimentation, statistical analysis,
+                        and human-supervised AI evaluation.
                     </p>
                 </div>
 
