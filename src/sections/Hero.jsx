@@ -2,7 +2,6 @@
 import { Button } from "@/components/Button";
 import { ArrowRight, Download } from "lucide-react";
 import { Github, Linkedin } from "lucide-react"
-import { SectionBackground } from "@/components/Section-Background";
 
 // const skillsList = [
 //     "Python",
@@ -20,9 +19,6 @@ export const Hero = () => {
     return (
     <section className="relative flex items-center overflow-hidden">
         
-        {/* Background Elements */ }
-       <SectionBackground image="/hero-background.jpg" className="bg-gradient-to-l" />
-
         {/* Falling Stars */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[...Array(50)].map((_, i) => (

@@ -1,5 +1,5 @@
 import { Navbar } from "@/layout/Navbar";
-import { About } from "@/sections/About";
+// import { About } from "@/sections/About";
 import { Experience } from "@/sections/Experience";
 import { Contact } from "@/sections/Contact";
 import { Projects } from "@/sections/Projects";
@@ -10,11 +10,10 @@ import { Route, Routes } from "react-router";
 
 const HomePage = () => {
   return (
-    <div className="min-h-screen overflow-x-hidden">
+    <div className="portfolio-shell min-h-screen overflow-x-hidden">
       <Navbar />
       <main>
         <Hero />
-        <About />
         <Experience />
         <Projects />
         <Contact />

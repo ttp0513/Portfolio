@@ -49,30 +49,18 @@ export const About = () => {
                         <span className="font-serif italic font-normal text-white"> built for what’s next </span>
                     </h2>
 
-                    <div className="space-y-6 mb-8 text-muted-foreground animate-fade-in animate-delay-400">
-
-                        <p >
-                        I’ve always been the kind of person who wants to understand how things work, not just on the surface, but underneath. That curiosity turned into a habit: breaking problems into clean, logical pieces and rebuilding them into something clearer, stronger, and more useful.
-                        </p>
-
-                        <p >
-                        Analytics gave me the language to explain patterns. </p>
-                        <p>Engineering gave me the tools to scale solutions. </p>
-                        <p>And experience taught me how to connect the two.</p>  
-                        
+                    <div className="space-y-4 mb-8 text-muted-foreground animate-fade-in animate-delay-400">
                         <p>
-                        I’ve worked with teams on media effectiveness, built data models for dashboards, and engineered front-end systems that make insights usable. Now pursuing my master’s in Data Science and Analytics, I’m deepening my ability to turn data into decisions and build systems that scale.
+                            I am an M.S. Data Science and Analytics candidate with professional
+                            experience supporting geo-experimentation and media-effectiveness
+                            measurement for retail clients.
                         </p>
 
                         <p>
-                        Together, these experiences shaped the way I approach every project, with intention, structure, and a commitment to making things genuinely better. My work isn’t just about data or code; it’s about creating clarity where there was confusion, direction where there was noise, and systems where there were only scattered pieces.
-                        </p>
-                    </div>
-
-                    <div className="mb-10 glass-light rounded-2xl p-5 glow-border animate-fade-in animate-delay-400">
-                        <p className="text-lg font-serif font-medium italic text-foreground">
-                        "My mission is to bring clarity to complexity, to understand problems deeply, break them into what truly matters, and rebuild them into systems that help people move with confidence.  
-                        Every project is a chance to make something clearer, stronger, and more useful than it was before."
+                            My work combines statistical analysis, business intelligence, and
+                            applied AI. I focus on building reproducible workflows, evaluating
+                            uncertainty honestly, and communicating results in a form stakeholders
+                            can use.
                         </p>
                     </div>
                 </div>

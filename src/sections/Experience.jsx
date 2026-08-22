@@ -1,5 +1,3 @@
-import {SectionBackground} from "@/components/Section-Background";
-
 const experience = [
 {
     period: "Mar 2026 - Present",
@@ -63,7 +61,6 @@ export const Experience = () => {
     return (
         <section id="experience"
         className="py-22 relative overflow-hidden">
-        <SectionBackground image="experience-background-1.jpg" className="bg-gradient-to-r"/>
         <div />
             <div className="container mx-auto px-6 relative z-10">
                 {/* Header */}

@@ -34,6 +34,44 @@
     font-family: "Inter", sans-serif;
   }
 
+  .portfolio-shell {
+    position: relative;
+    isolation: isolate;
+    background: #0b0907;
+  }
+
+  .portfolio-shell::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    pointer-events: none;
+    background-image:
+      linear-gradient(
+        180deg,
+        rgb(8 7 6 / 42%) 0%,
+        rgb(11 9 7 / 76%) 48%,
+        rgb(8 7 6 / 92%) 100%
+      ),
+      url("/hero-background.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.46;
+  }
+
+  .portfolio-shell::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+      radial-gradient(circle at 12% 8%, rgb(213 137 54 / 12%), transparent 25rem),
+      radial-gradient(circle at 88% 34%, rgb(228 108 37 / 8%), transparent 32rem),
+      linear-gradient(180deg, transparent 0%, rgb(15 7 0 / 36%) 45%, rgb(8 7 6 / 70%) 100%);
+  }
+
   .font-serif {
     font-family: "Playfair Display", serif;
   }
