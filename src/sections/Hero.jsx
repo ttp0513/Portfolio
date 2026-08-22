@@ -1,25 +1,24 @@
 /* eslint-disable react-hooks/purity */
 import { Button } from "@/components/Button";
 import { ArrowRight, Download } from "lucide-react";
-import { Github, Linkedin, Instagram } from "lucide-react"
+import { Github, Linkedin } from "lucide-react"
 import { SectionBackground } from "@/components/Section-Background";
 
-
-const skillsList = [
-    "Python",
-    "R",
-    "SAS",
-    "Excel",
-    "Geo Experimentation",
-    "Causal Inference",
-    "Statistical Modeling",
-    "Applied AI Evaluation",
-    "Streamlit"
-];
+// const skillsList = [
+//     "Python",
+//     "R",
+//     "SAS",
+//     "Excel",
+//     "Geo Experimentation",
+//     "Causal Inference",
+//     "Statistical Modeling",
+//     "Applied AI Evaluation",
+//     "Streamlit"
+// ];
 
 export const Hero = () => {
     return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
+    <section className="relative flex items-center overflow-hidden">
         
         {/* Background Elements */ }
        <SectionBackground image="/hero-background.jpg" className="bg-gradient-to-l" />
@@ -44,7 +43,7 @@ export const Hero = () => {
 
 
         {/* Content */ }   
-        <div className="container mx-auto px-6 pt-32 pb-30 relative z-10">
+        <div className="container mx-auto px-6 pt-28 pb-16 relative z-10">
             <div className = "grid lg:grid-cols-2 gap-12 items-center">
 
                 {/* Left Column - Text Content */ }
@@ -77,9 +76,9 @@ export const Hero = () => {
                         <div className="flex flex-wrap gap-4 animate-fade-in animate-delay-600">
 
                             {/* Contact */}
-                        <Button >
-                            Contact Me <ArrowRight className="w-5 h-5"/>
-                        </Button>
+                            <Button as="a" href="#projects">
+                                Explore my Work <ArrowRight className="w-5 h-5" />
+                            </Button>
 
                             {/* Download CV */}
                         <button className = "wrap-text-bottom wrap-text-bottom:hover relative z-10 rounded-full flex items-center justify-center gap-2 cursor-pointer">
@@ -146,7 +145,7 @@ export const Hero = () => {
             </div>
 
                 {/* Skills Demo */ }
-                <div className=" mt-20 animate-fade-in animate-delay-800">
+                {/* <div className=" mt-20 animate-fade-in animate-delay-800">
                     <p className="text-lg text-muted-foreground mb-10 text-center">My Tech Stack</p>
                         <div className="relative flex overflow-hidden">
                             <div className="flex relative whitespace-nowrap animate-marquee" >
@@ -161,7 +160,7 @@ export const Hero = () => {
                             ))}
                             </div>
                         </div>
-                </div>
+                </div> */}
   
         </div>
             

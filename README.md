@@ -1,16 +1,48 @@
-# React + Vite
+# Trong Phan Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React portfolio focused on experimentation analytics, marketing measurement, and applied data science. The repository also documents the requirements and design decisions used to develop the site.
 
-Currently, two official plugins are available:
+## Requirements
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Node.js 24 LTS
+- npm 11 or newer
 
-## React Compiler
+## Run locally
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+From the `Portfolio` directory:
 
-## Expanding the ESLint configuration
+```powershell
+npm install
+npm run dev
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Open the local address printed by Vite. It is usually `http://localhost:5173`.
+
+The routing prototype is available at:
+
+```text
+http://localhost:5173/projects/routing-preview
+```
+
+## Validate a production build
+
+```powershell
+npm run build
+npm run preview
+```
+
+The optimized site is written to `dist/`.
+
+## Current routes
+
+- `/` - Portfolio homepage
+- `/projects/routing-preview` - Dummy reusable case-study page
+- `/not-found` - Unknown-route fallback
+
+## Project documentation
+
+- [`docs/01-project-brief.md`](docs/01-project-brief.md)
+- [`docs/02-user-requirements.md`](docs/02-user-requirements.md)
+- [`docs/diagrams/portfolio-use-cases.mmd`](docs/diagrams/portfolio-use-cases.mmd)
+
+The dummy case study is intentionally labeled as a prototype. It will be replaced with evidence-backed project content after the reusable route and information architecture are approved.

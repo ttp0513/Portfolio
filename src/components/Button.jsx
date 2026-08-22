@@ -1,4 +1,5 @@
-export const Button = ({className, size="default", children, ...prop}) => {
+export const Button = ({as = "button", className, size="default", children, ...prop}) => {
+    const Element = as;
     const baseClasses = 
         "relative overflow-hidden rounded-full font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-primary bg-primary text-primary-foreground cursor-pointer hover:bg-primary/90 shadow-primary/25";
     const sizeClasses = {
@@ -8,10 +9,10 @@ export const Button = ({className, size="default", children, ...prop}) => {
     }
     const classes = `${baseClasses} ${sizeClasses[size] || sizeClasses.default} ${className || ""}`;
     return (
-        <button className={classes} {...prop}>
+        <Element className={classes} {...prop}>
             <span className = "relative flex items-center justify-center gap-2">
                 {children}
             </span>
-        </button>
+        </Element>
     );
 };
