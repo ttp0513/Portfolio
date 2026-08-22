@@ -98,6 +98,10 @@
     border: 1px solid color-mix(in srgb, var(--color-border) 20%, transparent);
   }
 
+  .glass-strong.nav-glass {
+    border: 0;
+  }
+
   .glow-text {
     text-shadow: 0 0 30px
       color-mix(in srgb, var(--color-primary) 50%, transparent);

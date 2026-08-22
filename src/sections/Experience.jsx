@@ -1,138 +1,218 @@
-const experience = [
-{
+import {
+  BriefcaseBusiness,
+  GraduationCap,
+  Microscope,
+} from "lucide-react";
+
+const roles = [
+  {
     period: "Mar 2026 - Present",
     role: "Student Researcher",
     company: "Data Quality and Survey Methodology Lab",
-    description:
-        "Designing and evaluating a human-supervised workflow for classifying noisy, open-ended survey responses while preserving human labels, model outputs, and reproducible audit evidence.",
-    technologies: ["Python", "Streamlit", "Applied AI Evaluation", "Research Methods"],
-    current: true,
-},
-{
-    period: "Expected Dec 2027",
-    role: "M.S. Data Science and Analytics Candidate",
-    company: "Kennesaw State University",
-    description:
-        "Strengthening my foundations in statistical methods, programming, model evaluation, and responsible applied data science. Current GPA: 4.00.",
-    technologies: ["Python", "R", "SAS", "Statistical Modeling"],
-    current: false,
-},
-{
+    type: "Research",
+    icon: Microscope,
+    summary:
+      "Designing and evaluating a human-supervised workflow for classifying noisy, open-ended survey responses.",
+    evidence: [
+      ["Workflow", "Human-supervised classification"],
+      ["Controls", "Preserved labels and outputs"],
+      ["Evidence", "Reproducible audit records"],
+    ],
+    skills: ["Python", "Streamlit", "Applied AI Evaluation"],
+  },
+  {
     period: "Jun 2022 - Feb 2025",
     role: "Advanced Analytics Analyst",
-    company: "Ovative Group LLC",
-    description:
-        "Supported geo-experiment design and analysis across seven-plus retail client accounts and online and offline media channels. Configured an internal R-based geo-testing platform, evaluated iROAS point estimates and one-sided confidence bounds, and helped assess whether budget or duration changes were needed. Prepared and presented findings, uncertainty, and measurement implications to internal analytics teams.",
-    technologies: ["R", "Geo Experimentation", "Causal Inference", "Excel"],
-    current: false,
-},
-{
+    company: "Ovative Group",
+    type: "Professional",
+    icon: BriefcaseBusiness,
+    featured: true,
+    summary:
+      "Supported geo-experiment design and analysis across 7+ retail client accounts and online and offline media channels.",
+    evidence: [
+      ["Scope", "Retail revenue, traffic, e-commerce and stores"],
+      ["Methods", "GeoX, GeoLift and R-based configuration"],
+      ["Decisions", "Budget, duration and test reliability"],
+    ],
+    contribution:
+      "Configured experiment inputs, evaluated iROAS point estimates and one-sided confidence bounds, and presented uncertainty and measurement implications to internal analytics teams.",
+    skills: ["R", "Geo Experimentation", "Causal Inference", "Excel"],
+  },
+  {
     period: "2019 - 2022",
     role: "Accounting Assistant",
-    company: "University of Minnesota - CFAN Department",
-    description:
-        "Supported financial operations through purchasing reconciliation, budget validation, and streamlined administrative workflows.",
-    technologies: ["Excel", "PeopleSoft"],
-    current: false,
-},
-{
+    company: "University of Minnesota - CFANS",
+    type: "Earlier experience",
+    icon: BriefcaseBusiness,
+    summary:
+      "Supported financial operations through purchasing reconciliation, budget validation, and streamlined administrative workflows.",
+    skills: ["Excel", "PeopleSoft"],
+  },
+  {
     period: "2019",
     role: "Data Analyst Intern",
     company: "Y Venture Group",
-    description:
-        "Built a U.S. book-sales dashboard with a team of interns to forecast demand and improve inventory planning.",
-    technologies: ["Excel", "Python"],
-    current: false,
-},
-{
+    type: "Professional",
+    icon: BriefcaseBusiness,
+    summary:
+      "Built a U.S. book-sales dashboard with a team of interns to support demand forecasting and inventory planning.",
+    skills: ["Excel", "Python", "Dashboarding"],
+  },
+];
+
+const education = [
+  {
+    period: "Expected Dec 2027",
+    degree: "M.S. Data Science and Analytics",
+    school: "Kennesaw State University",
+    detail: "Current GPA: 4.00",
+  },
+  {
     period: "2017 - 2022",
-    role: "Undergraduate Student",
-    company: "University of Minnesota",
-    description:
-        "Completed a bachelor's degree in Management Information Systems and Supply Chain Operations, with a minor in Business Analytics.",
-    technologies: ["Excel", "Python"],
-    current: false,
-}
+    degree: "B.S. Management Information Systems and Supply Chain Operations",
+    school: "University of Minnesota",
+    detail: "Minor in Business Analytics",
+  },
+];
 
-]
+const EvidenceGrid = ({ evidence }) => {
+  if (!evidence) return null;
 
+  return (
+    <dl className="mt-5 grid gap-3 sm:grid-cols-3">
+      {evidence.map(([label, value]) => (
+        <div
+          key={label}
+          className="rounded-xl border border-primary/15 bg-background/35 p-4"
+        >
+          <dt className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
+            {label}
+          </dt>
+          <dd className="mt-2 text-sm leading-relaxed text-muted-foreground">
+            {value}
+          </dd>
+        </div>
+      ))}
+    </dl>
+  );
+};
 
 export const Experience = () => {
-    return (
-        <section id="experience"
-        className="py-22 relative overflow-hidden">
-        <div />
-            <div className="container mx-auto px-6 relative z-10">
-                {/* Header */}
-                <div className="max-w-3xl mb-16">
-                    <span className="text-secondary text-md font-medium tracking-wider uppercase animate-fade-in animate-delay-100">My Journey</span>
-                    <h2
-                    className="text-4xl md:text-5xl font-bold mt-4 mb-7 animate-fade-in
-                    animate-delay-100 text-secondary-foreground">Experience in
-                    <span className="font-serif italic font-normal text-white"> experimentation and applied analytics.</span>
-                    </h2>
+  return (
+    <section id="experience" className="relative py-20">
+      <div className="container relative z-10 mx-auto max-w-6xl px-6">
+        <div className="mt-12 flex items-center gap-3">
+          <BriefcaseBusiness className="h-5 w-5 text-primary" />
+          <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-secondary">
+            Professional and research experience
+          </h3>
+        </div>
 
-                    <p className="text-muted-foreground animate-fade-in animate-delay-200">
-                        Professional and academic work spanning geo-experimentation, statistical analysis,
-                        and human-supervised AI evaluation.
+        <div className="relative mt-8">
+          <div className="absolute bottom-0 left-[7px] top-2 w-px bg-gradient-to-b from-primary via-primary/35 to-transparent md:left-[11.25rem]" />
+
+          <div className="space-y-6">
+            {roles.map((item) => {
+              const Icon = item.icon;
+
+              return (
+                <article
+                  key={`${item.period}-${item.role}`}
+                  className="relative grid gap-3 pl-9 md:grid-cols-[10rem_minmax(0,1fr)] md:gap-8 md:pl-0"
+                >
+                  <div className="pt-1 text-sm font-medium text-primary md:text-right">
+                    {item.period}
+                  </div>
+
+                  <div className="absolute left-0 top-1 flex h-4 w-4 items-center justify-center rounded-full bg-primary ring-4 ring-background md:left-[10.75rem]">
+                    <span className="h-1.5 w-1.5 rounded-full bg-primary-foreground" />
+                  </div>
+
+                  <div
+                    className={`rounded-2xl border p-5 backdrop-blur-md transition-colors duration-300 md:p-6 ${
+                      item.featured
+                        ? "border-primary/50 bg-surface/45 shadow-[0_18px_70px_rgb(213_137_54_/_12%)]"
+                        : "border-primary/20 bg-surface/20 hover:border-primary/40"
+                    }`}
+                  >
+                    <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                      <div>
+                        <h4 className="text-xl font-semibold md:text-2xl">
+                          {item.role}
+                        </h4>
+                        <p className="mt-1 text-sm text-muted-foreground">
+                          {item.company}
+                        </p>
+                      </div>
+                      <span className="inline-flex w-fit items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
+                        <Icon className="h-3.5 w-3.5" />
+                        {item.type}
+                      </span>
+                    </div>
+
+                    <p className="mt-5 max-w-3xl leading-relaxed text-muted-foreground">
+                      {item.summary}
                     </p>
-                </div>
 
-                {/* Timeline */}
-                <div className="relative">
-                    <div className="timeline-glow absolute left-0 md:left-1/2 top-0 bottom-0 w-[3px]
-                     bg-gradient-to-b from-primary/80 via-primary/30 to-transparent md:-translate-x-1/2
-                     shadow-[0_0_25px_rgb(143, 91, 39, 0.8)]">
+                    <EvidenceGrid evidence={item.evidence} />
+
+                    {item.contribution && (
+                      <div className="mt-5 border-l-2 border-primary/50 pl-4">
+                        <div className="text-xs font-semibold uppercase tracking-[0.18em] text-secondary">
+                          My contribution
+                        </div>
+                        <p className="mt-2 max-w-3xl text-sm leading-relaxed text-muted-foreground">
+                          {item.contribution}
+                        </p>
+                      </div>
+                    )}
+
+                    <div className="mt-5 flex flex-wrap gap-2">
+                      {item.skills.map((skill) => (
+                        <span
+                          key={skill}
+                          className="rounded-full bg-primary/10 px-3 py-1 text-xs text-secondary"
+                        >
+                          {skill}
+                        </span>
+                      ))}
                     </div>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+        </div>
 
+        <div className="mt-16 rounded-3xl border border-primary/20 bg-surface/20 p-6 backdrop-blur-md md:p-8">
+          <div className="flex items-center gap-3">
+            <GraduationCap className="h-5 w-5 text-primary" />
+            <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-secondary">
+              Education
+            </h3>
+          </div>
 
-                {/* Experience Items */}
-                    <div className="space-y-12"> 
-                        {experience.map((exp, index) => {
-                        // const isStudent = exp.role?.toLowerCase().includes("student");
-                        return (
-                            <div
-                            key={index}
-                            className="relative grid md:grid-cols-2 gap-4 animate-fade-in"
-                            style={{ animationDelay: `${(index + 2) * 200}ms` }}
-                            >
-
-                            {/* Item Dots */}
-                            <div className="absolute left-0 md:left-1/2 top-0 w-3 h-3 bg-primary rounded-full -translate-x-1/2 ring-4 ring-background z-10">
-                            {exp.current && (<span className="absolute inset-0 rounded-full bg-primary animate-ping opacity-75"/>)}
-                            </div>
-                            {/* Item Content*/}
-                            <div
-                                className={`pl-8 md:pl-0 ${
-                                index % 2 === 0
-                                    ? "md:pr-16 md:text-right"   // LEFT
-                                    : "md:col-start-2 md:pl-16"  // RIGHT
-                                }`}
-                            >
-                                <div className="group glass-strong p-4 rounded-2xl border border-primary/30 hover:border-primary/50 hover:text-primary hover:bg-muted/50 transition-all duration-500">
-                                <span className="text-sm text-primary font-medium">{exp.period}</span>
-                                <h3 className="text-xl font-semibold mt-2">{exp.role}</h3>
-                                <p className="text-muted-foreground font-normal text-sm mt-1 italic">{exp.company}</p>
-                                <p className="text-muted-foreground mt-4 whitespace-pre-line">{exp.description}</p>
-
-                                <div className={`flex flex-wrap gap-2 mt-4 ${index % 2 === 0 ? "md:justify-end" : "" }`}>
-                                    {exp.technologies.map((tech, techId) => (
-                                    <span key={techId} className="px-3 py-1 bg-surface text-xs rounded-full text-muted-foreground group-hover:bg-primary group-hover:text-border transition-all duration-800"
-                                    >{tech}</span>
-                                    ))}
-                                </div>
-                                </div>
-                            </div>
-                            </div>
-                        );
-                        })}
-
-                    </div>
+          <div className="mt-6 divide-y divide-primary/15">
+            {education.map((item) => (
+              <article
+                key={item.degree}
+                className="grid gap-2 py-5 first:pt-0 last:pb-0 md:grid-cols-[10rem_minmax(0,1fr)_auto] md:items-center md:gap-6"
+              >
+                <div className="text-sm font-medium text-primary">
+                  {item.period}
                 </div>
-
-
-            </div>
-        
-        </section>
-    )
+                <div>
+                  <h4 className="font-semibold">{item.degree}</h4>
+                  <p className="mt-1 text-sm text-muted-foreground">
+                    {item.school}
+                  </p>
+                </div>
+                <div className="text-sm text-secondary">{item.detail}</div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 };

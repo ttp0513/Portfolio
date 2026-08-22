@@ -17,7 +17,7 @@ import { Github, Linkedin } from "lucide-react"
 
 export const Hero = () => {
     return (
-    <section className="relative flex items-center overflow-hidden">
+    <section id="home" className="relative flex items-center overflow-hidden">
         
         {/* Falling Stars */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -55,9 +55,8 @@ export const Hero = () => {
 
                     {/* Headline */}
                     <div className="space-y-4">
-                        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in animate-delay-200">
-                            Turning <span className="text-primary glow-text">experiments</span> and data into
-                            <span className="font-serif italic font-normal text-primary glow-text"> decision-ready evidence</span>.
+                        <h1 className="max-w-4xl text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-[-0.03em]">
+                            <span className="font-serif italic font-normal text-primary glow-text">Measure </span>what changed.
                         </h1>
 
                         <p className = "text-lg text-muted-foreground max-w-2xl animate-fade-in animate-delay-400">
@@ -133,8 +132,8 @@ export const Hero = () => {
 
                              {/* Experience Badge */ }
                             <div className="absolute -top-4 -left-4 glass rounded-xl px-4 py-3 animate-float">
-                                <div className="text-2xl font-bold text-primary text-center">7+</div>
-                                <div className="text-sm font-medium">Retail Accounts</div>
+                                <div className="text-2xl font-bold text-primary text-center">2+</div>
+                                <div className="text-sm font-medium">Experience</div>
                             </div>
                         </div>
                     </div>

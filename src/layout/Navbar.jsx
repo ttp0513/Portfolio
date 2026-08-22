@@ -1,86 +1,104 @@
-import { Button } from "@/components/Button";
-import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import { useEffect, useState } from "react";
 
 const navLinks = [
-    {href: "#about", label: "About"},
-    {href: "#projects", label: "Projects"},
-    {href: "#experience", label: "Experience"},
-    {href: "#contact", label: "Contact"}
-]
+  { href: "#home", label: "About" },
+  { href: "#experience", label: "Experience" },
+  { href: "#projects", label: "Projects" },
+  { href: "#contact", label: "Contact" },
+];
 
 export const Navbar = () => {
-    // Controls whether the mobile dropdown menu is visible.
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false) ;
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
-    // Tracks whether the user has scrolled past 50px.
-    const [isScrolled, setIsScrolled] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
 
-    useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 50);
-        };
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-        }, [])
-    //
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
+  return (
+    <header
+      className={`fixed left-0 right-0 top-0 z-50 py-4 transition-colors duration-300 ${
+        isScrolled
+          ? "glass-strong nav-glass shadow-lg shadow-black/10"
+          : "bg-transparent"
+      }`}
+    >
+      <nav className="container mx-auto flex items-center justify-between px-6">
+        <a
+          href="#home"
+          aria-label="Return to the top of the portfolio"
+          className="text-xl font-bold tracking-tight hover:text-primary"
+        >
+          TP<span className="text-primary">.</span>
+        </a>
 
-    return (
-        <header className= {`fixed top-0 left-0 right-0 transition-all duration-600 ${isScrolled ? "glass-strong py-4 border-none" : "bg-transparent py-6"}  z-50`}>
-            <nav className = "container mx-auto px-6 flex items-center justify-between">
-                <a
-                href = "#"
-                className = "text-xl font-bold tracking-tight hover:text-primary">TP<span className = "text-primary">.</span>
-                </a>
+        <div className="hidden items-center gap-2 md:flex">
+          <div className="flex items-center gap-1 rounded-full px-2 py-1">
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="rounded-full px-4 py-2 text-md text-muted-foreground hover:text-foreground"
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
+        </div>
 
-            {/* Desktop menu */}
-            <div>
-                <div className = "hidden md:flex items-center gap-2">
-                        <div className = {`rounded-full px-2 py-1 flex items-center gap-1 transition duration-300 ease-in-out ${isScrolled ? "glass-strong" : ""} `} >
-                    {navLinks.map((link, index) => (
-                        <a key={index} href={link.href} className = "px-4 py-2 text-md text-muted-foreground hover:text-foreground rounded-full">
-                            {link.label}
-                        </a>
-                   
-                    ))}
-                    </div>
-                </div>
-            </div>
-            <div className = "hidden md:block">
-                <Button className = "glass">
-                    Contact Me
-                </Button>
-            </div>
-            
+        <div className="hidden md:block">
+          <a
+            href="/Trong_Phan_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-2 py-2 text-sm font-medium text-primary transition-colors hover:text-secondary"
+          >
+            View Resume
+          </a>
+        </div>
 
-            {/* Mobile menu button */}
-            <button 
-                className ="md:hidden p-2 text-foreground cursor-pointer" 
-                // When the button is clicked, it toggles the mobile menu open/closed.
-                onClick = {() => setIsMobileMenuOpen((prev) => !prev)}>
-                {isMobileMenuOpen ? <X size  ={24} /> : <Menu size  ={24} />}
-            </button>
-            </nav>
+        <button
+          type="button"
+          aria-label={isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+          aria-expanded={isMobileMenuOpen}
+          className="cursor-pointer p-2 text-foreground md:hidden"
+          onClick={() => setIsMobileMenuOpen((previous) => !previous)}
+        >
+          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
+      </nav>
 
-            {/* Mobile menu (hidden by default) */}
-            {isMobileMenuOpen && (
-            <div className ="md:hidden glass animate-fade-in">
-                <div className = "container mx-auto px-6 py-6 flex flex-col gap-4 text-center">
-                    {navLinks.map((link, index) => (
-                        <a key={index} 
-                           href={link.href}
-                           onClick = {() => setIsMobileMenuOpen(false)}
-                           className = "text-xl text-muted-foreground hover:text-foreground py-2">
-                           {link.label}
-                        </a>
-                   
-                    ))}
-                    <Button onClick = {() => setIsMobileMenuOpen(false)} >Contact Me</Button>
-                </div>
-            
-            </div>)}
-            
-        </header>
-        )
+      {isMobileMenuOpen && (
+        <div className="glass animate-fade-in md:hidden">
+          <div className="container mx-auto flex flex-col gap-4 px-6 py-6 text-center">
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="py-2 text-xl text-muted-foreground hover:text-foreground"
+              >
+                {link.label}
+              </a>
+            ))}
+            <a
+              href="/Trong_Phan_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="py-2 text-xl font-medium text-primary hover:text-secondary"
+            >
+              View Resume
+            </a>
+          </div>
+        </div>
+      )}
+    </header>
+  );
 };
